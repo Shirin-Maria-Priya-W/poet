@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poetry Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .poem-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        .poem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .poem-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .poem-text {
+            line-height: 1.8;
+            color: #555;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .poem-theme {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .poem-date {
+            color: #888;
+            font-size: 0.9em;
+            text-align: right;
+        }
+
+        .category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .category-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 20px auto;
+            display: block;
+            text-align: center;
+            max-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Poetry Gallery 🎨</h1>
+            <p>A collection of verses organized by themes and moods</p>
+        </div>
+
+        <!-- Nature Poems Section -->
+        <div class="category-section">
+            <h2 class="category-title">🌿 Nature & Seasons</h2>
+            <div class="gallery-grid">
+                <div class="poem-card">
+                    <div class="poem-theme">Spring</div>
+                    <h3 class="poem-title">Morning Dew</h3>
+                    <div class="poem-text">
+                        Pearls of dawn on emerald leaves,<br>
+                        Nature's jewelry, morning weaves.<br>
+                        Each droplet holds the sky so blue,<br>
+                        A world reflected, fresh and new.
+                    </div>
+                    <div class="poem-date">Written: March 15, 2024</div>
+                </div>
+
+                <div class="poem-card">
+                    <div class="poem-theme">Autumn</div>
+                    <h3 class="poem-title">Golden Farewell</h3>
+                    <div class="poem-text">
+                        Leaves dance down in amber light,<br>
+                        Summer's end, a gentle sight.<br>
+                        Trees undress with golden grace,<br>
+                        Autumn's beauty time can't erase.
+                    </div>
+                    <div class="poem-date">Written: October 8, 2024</div>
+                </div>
+
+                <div class="poem-card">
+                    <div class="poem-theme">Ocean</div>
+                    <h3 class="poem-title">Waves of Wonder</h3>
+                    <div class="poem-text">
+                        Endless blue meets endless sky,<br>
+                        Waves whisper secrets as they die.<br>
+                        Salt and spray, the ocean's song,<br>
+                        Here my restless heart belongs.
+                    </div>
+                    <div class="poem-date">Written: July 22, 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Love & Relationships Section -->
+        <div class="category-section">
+            <h2 class="category-title">💕 Love & Hearts</h2>
+            <div class="gallery-grid">
+                <div class="poem-card">
+                    <div class="poem-theme">Romance</div>
+                    <h3 class="poem-title">First Glance</h3>
+                    <div class="poem-text">
+                        In crowded rooms, your eyes found mine,<br>
+                        A moment frozen, so divine.<br>
+                        Time stopped to let our hearts collide,<br>
+                        Love bloomed with nowhere left to hide.
+                    </div>
+                    <div class="poem-date">Written: February 14, 2024</div>
+                </div>
+
+                <div class="poem-card">
+                    <div class="poem-theme">Friendship</div>
+                    <h3 class="poem-title">Unspoken Bond</h3>
+                    <div class="poem-text">
+                        No words needed, hearts that know,<br>
+                        Through storms together we will go.<br>
+                        Friendship's light will always shine,<br>
+                        Your loyal heart beats close to mine.
+                    </div>
+                    <div class="poem-date">Written: June 5, 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Life & Dreams Section -->
+        <div class="category-section">
+            <h2 class="category-title">✨ Dreams & Hope</h2>
+            <div class="gallery-grid">
+                <div class="poem-card">
+                    <div class="poem-theme">Dreams</div>
+                    <h3 class="poem-title">Night's Canvas</h3>
+                    <div class="poem-text">
+                        Stars paint stories in the night,<br>
+                        Dreams take wing in silver light.<br>
+                        Sleep unlocks what day conceals,<br>
+                        In dreams, the impossible feels real.
+                    </div>
+                    <div class="poem-date">Written: November 12, 2024</div>
+                </div>
+
+                <div class="poem-card">
+                    <div class="poem-theme">Hope</div>
+                    <h3 class="poem-title">After the Storm</h3>
+                    <div class="poem-text">
+                        Rain may fall and winds may blow,<br>
+                        But flowers still find ways to grow.<br>
+                        After darkness comes the dawn,<br>
+                        Hope lives on, forever strong.
+                    </div>
+                    <div class="poem-date">Written: April 18, 2024</div>
+                </div>
+
+                <div class="poem-card">
+                    <div class="poem-theme">Journey</div>
+                    <h3 class="poem-title">Path Unknown</h3>
+                    <div class="poem-text">
+                        Roads wind far beyond my sight,<br>
+                        Each step forward feels so right.<br>
+                        Though I know not where I'll go,<br>
+                        The journey's all I need to know.
+                    </div>
+                    <div class="poem-date">Written: September 3, 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="nav-btn">🏠 Back to Home</a>
+    </div>
+</body>
+</html>

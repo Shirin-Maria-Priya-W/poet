@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> POEM </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .poem-content {
+            padding: 60px 80px;
+            position: relative;
+            line-height: 2;
+            font-size: 1.1em;
+            color: #333;
+            text-align: center;
+        }
+
+        .poem-verse {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .flower-decoration {
+            position: absolute;
+            font-size: 3em;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .flower-top-left {
+            top: 20px;
+            left: 20px;
+            color: #ff6b6b;
+            animation-delay: 0s;
+        }
+
+        .flower-top-right {
+            top: 20px;
+            right: 20px;
+            color: #4ecdc4;
+            animation-delay: 2s;
+        }
+
+        .flower-bottom-left {
+            bottom: 20px;
+            left: 20px;
+            color: #45b7d1;
+            animation-delay: 4s;
+        }
+
+        .flower-bottom-right {
+            bottom: 20px;
+            right: 20px;
+            color: #f9ca24;
+            animation-delay: 1s;
+        }
+
+        .flower-center-left {
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #6c5ce7;
+            animation-delay: 3s;
+        }
+
+        .flower-center-right {
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            color: #fd79a8;
+            animation-delay: 5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating-petals {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .petal {
+            position: absolute;
+            font-size: 1.5em;
+            opacity: 0.4;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(calc(100vh + 100px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .author-signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 2px solid #eee;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 20px auto;
+            display: block;
+            text-align: center;
+            max-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .poem-content {
+                padding: 40px 30px;
+            }
+            
+            .flower-decoration {
+                font-size: 2em;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>A Garden of Words</h1>
+            <p>Where poetry blooms eternal</p>
+        </div>
+        
+        <div class="poem-content">
+            <!-- Flower decorations -->
+            <div class="flower-decoration flower-top-left">🌸</div>
+            <div class="flower-decoration flower-top-right">🌺</div>
+            <div class="flower-decoration flower-bottom-left">🌻</div>
+            <div class="flower-decoration flower-bottom-right">🌷</div>
+            <div class="flower-decoration flower-center-left">🌹</div>
+            <div class="flower-decoration flower-center-right">🌼</div>
+            
+            <!-- Poem content -->
+            <div class="poem-verse">
+                I wandered lonely as a cloud<br>
+                That floats on high o'er vales and hills,<br>
+                When all at once I saw a crowd,<br>
+                A host, of golden daffodils;<br>
+                Beside the lake, beneath the trees,<br>
+                Fluttering and dancing in the breeze.<br>
+
+            </div>
+            
+            <div class="poem-verse">
+               Continuous as the stars that shine<br>
+                And twinkle on the milky way,<br>
+                They stretched in never-ending line<br>
+                Along the margin of a bay:<br>
+                Ten thousand saw I at a glance,<br>
+                Tossing their heads in sprightly dance.<br>
+            </div>
+            
+            <div class="poem-verse">
+                The waves beside them danced; but they<br>
+                Out-did the sparkling waves in glee:<br>
+                A poet could not but be gay,<br>
+                In such a jocund company:<br>
+                I gazed—and gazed—but little thought<br>
+                What wealth the show to me had brought:<br>
+
+            </div>
+            <div class ="poem-verse">
+                For oft, when on my couch I lie<br>
+                In vacant or in pensive mood,<br>
+                They flash upon that inward eye<br>
+                Which is the bliss of solitude;<br>
+                And then my heart with pleasure fills,<br>
+                And dances with the daffodils.<br>
+            </div>
+            
+            <div class="author-signature">
+                William Wordsworth<br>
+            </div>
+        </div>
+        
+        <!-- Floating petals animation -->
+        <div class="floating-petals">
+            <div class="petal" style="left: 10%; animation-delay: 0s;">🌸</div>
+            <div class="petal" style="left: 20%; animation-delay: 2s;">🌺</div>
+            <div class="petal" style="left: 30%; animation-delay: 4s;">🌻</div>
+            <div class="petal" style="left: 40%; animation-delay: 6s;">🌷</div>
+            <div class="petal" style="left: 50%; animation-delay: 8s;">🌹</div>
+            <div class="petal" style="left: 60%; animation-delay: 1s;">🌼</div>
+            <div class="petal" style="left: 70%; animation-delay: 3s;">🌸</div>
+            <div class="petal" style="left: 80%; animation-delay: 5s;">🌺</div>
+            <div class="petal" style="left: 90%; animation-delay: 7s;">🌻</div>
+        </div>
+    </div>
+    <a href="index.html" class="nav-btn">🏠 Back to Home</a>
+</body>
+</html>
