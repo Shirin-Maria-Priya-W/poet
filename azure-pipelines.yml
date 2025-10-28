@@ -10,7 +10,7 @@ steps:
     mvn -version
   displayName: 'Verify Java and Maven'
 
-- task: Maven@3
+- task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
